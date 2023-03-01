@@ -47,7 +47,6 @@ CMAKE_POLICY(SET CMP0022 NEW)
 add_compile_options(-Ofast -mavx2)
 SET(PROJECT_USE_KEYWORD_LINK_LIBRARIES TRUE)
 SET(DOXYGEN_USE_TEMPLATE_CSS TRUE)
-
 # ----------------------------------------------------
 # --- OPTIONS  ---------------------------------------
 # Need to be set before including base.cmake
@@ -264,6 +263,8 @@ SET(${PROJECT_NAME}_HEADERS
   )
 
 add_subdirectory(doc)
+SET(CMAKE_VERBOSE_MAKEFILE OFF)
+add_definitions(-w)
 add_subdirectory(src)
 if (BUILD_PYTHON_INTERFACE)
   add_subdirectory(python)
