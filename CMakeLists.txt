@@ -263,12 +263,13 @@ SET(${PROJECT_NAME}_HEADERS
   include/hpp/fcl/timings.h
   )
 
-add_subdirectory(doc)
+set(CMAKE_VERBOSE_MAKEFILE FALSE)
+# add_subdirectory(doc)
 add_subdirectory(src)
 if (BUILD_PYTHON_INTERFACE)
   add_subdirectory(python)
 endif ()
-add_subdirectory(test)
+# add_subdirectory(test)
 
 pkg_config_append_libs("hpp-fcl")
 IF(HPP_FCL_HAS_OCTOMAP)
